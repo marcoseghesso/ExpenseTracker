@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ExpenseForm from './ExpenseForm';
-import './NewExpense.css';
+import styles from './NewExpense.module.css';
 
 const NewExpense = (props) => {
    const saveExpenseDataHandler = (enteredExpenseData) => {
@@ -22,7 +22,7 @@ const NewExpense = (props) => {
       setEditing(false);
    }
 
-   return <div className='new-expense'>
+   return <div className={styles['new-expense']}>
       {!isEditing && <button onClick={setEditingHandler}>Add New Expense</button>}
       {isEditing && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancel={stopEditingHandler} />}
    </div>
